@@ -15,6 +15,14 @@ class User {
     users.ensureIndex({accountNumber: 1}, {unique: true})
     return users.insertOne(user)
   }
+
+  static update(filter, update) {
+    return users.updateMany(filter, update)
+  }
+
+  static delete(filter) {
+    return users.deleteMany(filter)
+  }
 }
 
 module.exports = User
