@@ -1,0 +1,29 @@
+{
+  "name": "raflirach",
+  "version": "1.0.0",
+  "description": "<!-- **raflirach/raflirach** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ioredis": "^4.23.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.4",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=depelopment nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raflirach/raflirach.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raflirach/raflirach/issues"
+  },
+  "homepage": "https://github.com/raflirach/raflirach#readme"
+}
