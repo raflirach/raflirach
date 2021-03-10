@@ -11,8 +11,10 @@ class User {
   }
 
   static create(user){
-    users.ensureIndex({identityNumber: 1}, {unique: true})
-    users.ensureIndex({accountNumber: 1}, {unique: true})
+    users.createIndexes({ identityNumber: 1 }, { unique: true })
+    users.createIndexes({ accountNumber: 1 }, { unique: true })
+    users.createIndexes({ userName: 1 }, { unique: true })
+    users.createIndexes({ emailAddress: 1 }, { unique: true })
     return users.insertOne(user)
   }
 
