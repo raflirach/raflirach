@@ -1,22 +1,10 @@
-const AuthController = require('../controller/auth')
-const UserController = require('../controller/user')
-const authorization = require('../middlewares/auth')
+const router = require('express').Router() 
 
-const router = require('express').Router()
+const AuthController = require('../controller/auth')
+const userRouter = require('./user')
 
 router.get('/token', AuthController.getToken)
 
-router.use(authorization)
-router.route('/users')
-  .get(UserController.showAll)
-  .post(UserController.create)
-
-router.get('/users/account/:accountNumber', UserController.showByAccountNumber)
-router.get('/users/identity/:identityNumber', UserController.showByIdentityNumber)
-
-router.route('/users/:id')
-  .get(UserController.showOne)
-  .put(UserController.edit)
-  .delete(UserController.delete)
+router.use('/users', userRouter)
 
 module.exports = router
