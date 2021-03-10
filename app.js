@@ -1,8 +1,11 @@
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config()
+}
+
 const express = require('express')
 const { connect } = require('./config/mongodb')
 const app = express()
 const PORT = process.env.PORT || 4001
-
 
 connect().then(() => {
   const router = require('./routes')
