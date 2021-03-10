@@ -11,6 +11,28 @@ class UserController {
     }
   }
 
+  static async showByAccountNumber(req, res, next) {
+    try {
+      const { accountNumber } = req.params
+      const user = await User.findOne({ accountNumber })
+      if(user) res.status(200).json(user)
+      else throw {name: 'ErrorNotFound'}
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  static async showByIdentityNumber(req, res, next) {
+    try {
+      const { identityNumber } = req.params
+      const user = await User.findOne({ identityNumber })
+      if(user) res.status(200).json(user)
+      else throw {name: 'ErrorNotFound'}
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   static async create(req, res, next) {
     try {
       const { userName, accountNumber, emailAddress, identityNumber } = req.body

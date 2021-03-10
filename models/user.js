@@ -6,6 +6,10 @@ class User {
     return users.find().toArray()
   }
 
+  static findOne(filter) {
+    return users.findOne(filter)
+  }
+
   static create(user){
     users.ensureIndex({identityNumber: 1}, {unique: true})
     users.ensureIndex({accountNumber: 1}, {unique: true})

@@ -7,7 +7,11 @@ const router = require('express').Router()
 router.get('/token', AuthController.getToken)
 
 router.use(authorization)
-router.get('/users', UserController.showAll)
-router.post('/users', UserController.create)
+router.route('/users')
+  .get(UserController.showAll)
+  .post(UserController.create)
+
+router.get('/users/account/:accountNumber', UserController.showByAccountNumber)
+router.get('/users/identity/:identityNumber', UserController.showByIdentityNumber)
 
 module.exports = router
