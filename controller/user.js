@@ -8,7 +8,7 @@ class UserController {
       const users = await User.findAll()
       res.status(200).json(users)
     } catch (err) {
-      console.log(err);
+      next(err)
     }
   }
 
@@ -19,7 +19,7 @@ class UserController {
       if(user) res.status(200).json(user)
       else throw {name: 'ErrorNotFound'}
     } catch (err) {
-      console.log(err);
+      next(err)
     }
   }
 
@@ -30,7 +30,7 @@ class UserController {
       if(user) res.status(200).json(user)
       else throw {name: 'ErrorNotFound'}
     } catch (err) {
-      console.log(err);
+      next(err)
     }
   }
 
@@ -45,7 +45,7 @@ class UserController {
       })
       res.status(201).json(user.ops[0])
     } catch (err) {
-      res.status(400).json(err);
+      next(err)
     }
   }
 
