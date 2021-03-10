@@ -15,6 +15,7 @@ router.get('/users/account/:accountNumber', UserController.showByAccountNumber)
 router.get('/users/identity/:identityNumber', UserController.showByIdentityNumber)
 
 router.route('/users/:id')
+  .get(UserController.showOne)
   .put(UserController.edit)
   .delete(UserController.delete)
 
