@@ -14,4 +14,8 @@ router.route('/users')
 router.get('/users/account/:accountNumber', UserController.showByAccountNumber)
 router.get('/users/identity/:identityNumber', UserController.showByIdentityNumber)
 
+router.route('/users/:id')
+  .put(UserController.edit)
+  .delete(UserController.delete)
+
 module.exports = router
